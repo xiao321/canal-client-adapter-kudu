@@ -1,0 +1,25 @@
+dataSourceKey: defaultDS
+destination: example
+kuduMapping:
+  database: didapinche_taxi #mysql database
+  table: taxi_ride #mysql table
+  targetTable: k_didapinche_taxi.taxi_ride #kudu对应的表
+  # mysql field 作为kudu的 row key
+  targetKeys:
+    id: id$INT64
+  # mysql field : kudu field${kudu type}
+  targetColumns:
+    name: name$STRING
+    driver_id: driver_id$INT64
+    create_time: create_time$STRING
+
+#kudu 类型
+#BOOL:
+#FLOAT:
+#DOUBLE:
+#BINARY:
+#INT8:
+#INT16:
+#INT32:
+#INT64:
+#STRING:
